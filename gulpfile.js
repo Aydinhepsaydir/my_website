@@ -22,13 +22,11 @@ gulp.task("browserSync", function() {
   });
 });
 
-gulp.task("watch", ["browserSync", 'sass'], function() {
+gulp.task("watch", gulp.parallel("sass", "browserSync"), function() {
+  //reload whenever sass file is changed and saved
+  gulp.watch("app/scss/**/*.scss", ["sass"]);
 
-  //reload whenever sass file is changed and saves
-  gulp.watch("./app/scss/**/*.scss", ["sass"]);
-
-  //reload whenever js or html is changed and saved 
-  gulp.watch('./app/*.html', borwserSync.reload);
-  gulp.watch('./app/js/**/*.js', browserSync.reload);
-  
+  //reload whenever js or html is changed and saved
+  gulp.watch("./app/*.html", borwserSync.reload);
+  gulp.watch("./app/js/**/*.js", browserSync.reload);
 });

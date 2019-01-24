@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+@import "normalize";
+@import "variables";
+@import "mixins";
+
+//////////////////////
+/// GENERAL
+//////////////////////
+body,
+html {
+    padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $main-bg;
+  height: 100%;
+  -webkit-text-size-adjust: none;
+  font-family: 'Karla', sans-serif;
+  color: $text-color;
+} 
+
+.page-wrapper {
+    text-align: center;
+    display: inline-block;
+    width: 80%;
+    margin: 16px 10%;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: 400;
+    margin: 12px 12px 24px 12px;
+}
+
+p {
+    font-size: 22px;
+    margin: 12px;
+    
+    @include md {
+        font-size: 24px;
+    }
+    
+    .color-name {
+        color: $primary-color;
+    }
+}
+
+///////////////////////// 
+// WORK PAGE
+///////////////////////// 
+.projects-container {
+
+    .project {
+        background-color: white;
+        position: relative;
+        width: 45%;
+
+        a {
+            text-decoration: none;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+    
+            .text {
+                background-color: $main-bg;
+                color: $text-color;
+                text-align: center;
+                font-size: 16px;
+                padding: 16px 32px;
+                border-radius: 200px;
+                font-weight: 700;
+            }
+        }
+        
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+        
+        &:hover {
+            .middle {
+                opacity: 1;
+            }
+
+            img {
+                opacity: 0.3;
+            }
+        }
+    }
+}
+
+///////////////////////// 
+// NAV BAR 
+///////////////////////// 
+.navbar {
+    height: 75px;
+    width: 100%;
+    text-align: end;
+
+    .active {
+        color: lighten($primary-color, 10%);
+        
+    }
+    
+    a {
+        line-height: 75px;
+        font-size: 25px;
+        text-decoration: none;
+        margin: 0px 12px;
+        color: $text-color;
+        vertical-align: middle;
+        transition: 0.4s;
+        
+        &:hover {
+            color: $primary-color;
+        }
+
+        &:active {
+            color: lighten($primary-color, 10%);
+        }
+        
+        @include md {
+            font-size: 20px;
+            margin: 0px 4px;
+        }
+    }
+
+    img {
+        width: 55px;
+        vertical-align: middle;
+    }
+
+}
+
+///////////////////////// 
+// TECH STACK PAGE 
+///////////////////////// 
+.tech-stack {
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.tech {
+    display: inline-block;
+    margin: 24px;
+    width: 200px;
+    height: auto;  
+    transition: 0.4s;
+
+    @include md {
+        width: 150px;
+    }
+
+
+    &#css { 
+        height: 200px;
+        width: auto;
+
+        @include md {
+            height: 150px;
+        }
+    }
+
+}
+
+///////////////////////// 
+// INDEX PAGE
+///////////////////////// 
+.index-page-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    @include md {
+        top: 0%;
+        left: 0%;
+        transform: translate(0%, 0%);
+        position: relative;
+        display: block;
+    }
+
+    img {
+        width: 400px;  
+        height: auto;
+        margin-right: 25px;
+
+        @include md {
+            position: relative;
+            margin: 25px;
+        }
+
+        @include lg {
+            width: 350px;
+        }
+    }
+
+    svg {
+        vertical-align: middle;
+        height: 22px;
+        width: auto;
+        margin-right: 4px;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        color: $text-color;
+        font-size: 16px;
+        padding: 4px;
+    }
+
+    .social {
+        width: 400px;
+
+        @include lg {
+            width: 400px;
+        }
+
+        @include md {
+            text-align: center;
+            width: 100%;
+        }
+
+        p {
+            @include lg {
+                font-size: 24px;
+            }
+        }
+
+        .social-wrapper {
+            margin: 25px;
+        }
+    }
+
+    .social-container {
+        transition: 0.4s;
+
+        &:hover {
+            color: $secondary-color;
+
+            svg {
+                transition: 0.4s;
+                fill: $secondary-color;
+            }
+        }
+    }
+}
+
+////////////////////// 
+// PROJECT PAGE 
+////////////////////// 
+.project {
+    width: 500px;
+}
