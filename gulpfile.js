@@ -33,6 +33,7 @@ var reloadBrowser = function(done) {
 // Watch for changes
 var watchSource = function(done) {
   gulp.watch("app/style/scss", gulp.series(exports.default, reloadBrowser));
+  gulp.watch("app/*.html", gulp.series(exports.default, reloadBrowser));
   done();
 };
 
