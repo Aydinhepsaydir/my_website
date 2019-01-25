@@ -374,32 +374,6 @@ nav img {
   position: absolute;
   width: 300px; }
 
-.page-wrapper {
-  position: absolute;
-  height: 500px;
-  width: 500px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto; }
-  .page-wrapper .container {
-    text-align: center;
-    vertical-align: middle; }
-    .page-wrapper .container a {
-      display: block;
-      width: fit-content;
-      text-decoration: none;
-      line-height: 1;
-      color: #dedede;
-      margin: 10%;
-      transition: all 0.5s;
-      font-size: 50px; }
-      .page-wrapper .container a:hover {
-        color: #b71c1c;
-        letter-spacing: 8px;
-        font-size: 60px; }
-
 @keyframes bouncing {
   0% {
     bottom: 0; }
@@ -416,4 +390,15 @@ nav img {
   left: 50%;
   margin-left: -25px;
   position: absolute;
-  width: 50px; }
+  width: 30px;
+  fill: #b71c1c; }
+
+.intro-wrapper {
+  position: relative;
+  min-height: 100%; }
+  .intro-wrapper .intro-text {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center; }
