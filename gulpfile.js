@@ -34,6 +34,7 @@ var reloadBrowser = function(done) {
 var watchSource = function(done) {
   gulp.watch("app/style/scss", gulp.series(exports.default, reloadBrowser));
   gulp.watch("app/*.html", gulp.series(exports.default, reloadBrowser));
+  gulp.watch("app/js/*.js", gulp.series(exports.default, reloadBrowser));
   done();
 };
 
