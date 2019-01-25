@@ -2,31 +2,44 @@ var gulp = require("gulp");
 var sass = require("gulp-sass");
 var browserSync = require("browser-sync").create();
 
-gulp.task("sass", function() {
-  return gulp
-    .src("app/style/scss/stylesheet.scss") // Get source files with gulp.src
+// Create setup files
+var buildSass = function(done) {
+  // Compile the setup files
+  gulp
+    .src("app/style/scss/**/*.scss")
     .pipe(sass()) // Sends it through a gulp plugin
-    .pipe(gulp.dest("app/style/css")) // Outputs the file in the destination folder
-    .pipe(
-      browserSync.reload({
-        stream: true
-      })
-    );
-});
+    .pipe(gulp.dest("app/style/css"));
+  // Signal completion
+  done();
+};
 
-gulp.task("browserSync", function() {
+var startServer = function(done) {
+  // Initialize BrowserSync
   browserSync.init({
     server: {
-      baseDir: "app"
+      baseDir: "./app/"
     }
   });
-});
+  // Signal completion
+  done();
+};
 
-gulp.task("watch", gulp.parallel("sass", "browserSync"), function() {
-  //reload whenever sass file is changed and saved
-  gulp.watch("app/scss/**/*.scss", ["sass"]);
+// Reload the browser when files change
+var reloadBrowser = function(done) {
+  browserSync.reload();
+  done();
+};
 
-  //reload whenever js or html is changed and saved
-  gulp.watch("./app/*.html", borwserSync.reload);
-  gulp.watch("./app/js/**/*.js", browserSync.reload);
-});
+// Watch for changes
+var watchSource = function(done) {
+  gulp.watch("app/style/scss", gulp.series(exports.default, reloadBrowser));
+  done();
+};
+
+// Default task
+// gulp
+exports.default = gulp.series(buildSass);
+
+// Watch and reload
+// gulp watch
+exports.watch = gulp.series(exports.default, startServer, watchSource);
