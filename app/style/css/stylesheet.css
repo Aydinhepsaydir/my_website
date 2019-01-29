@@ -363,11 +363,11 @@ html {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #323232;
+  background-color: #FDF9F5;
   height: 100%;
   -webkit-text-size-adjust: none;
   font-family: "Karla", sans-serif;
-  color: #dedede; }
+  color: #004842; }
 
 nav img {
   float: right;
@@ -391,7 +391,7 @@ nav img {
   margin-left: -25px;
   position: absolute;
   width: 30px;
-  fill: #b71c1c; }
+  fill: #004842; }
 
 .intro-wrapper {
   position: relative;
@@ -402,3 +402,20 @@ nav img {
     top: 40%;
     width: 100%;
     text-align: center; }
+
+.developer-tools {
+  width: 80%;
+  min-height: 100%;
+  margin: auto;
+  text-align: center; }
+  .developer-tools h1 {
+    padding-top: 40px; }
+  .developer-tools .tech-stack {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: baseline; }
+    .developer-tools .tech-stack img {
+      margin: 20px;
+      width: 150px;
+      height: auto; }
