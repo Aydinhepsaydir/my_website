@@ -1,3 +1,10 @@
 steps:
-- name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/my-personal-website-230116/my-first-image", "./app"]
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/my-personal-website-230116/my-first-image",
+        "./app",
+      ]
+    images: ["gcr.io/my-personal-website-230116/my-first-image"]
