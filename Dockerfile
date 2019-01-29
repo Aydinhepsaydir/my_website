@@ -7,4 +7,3 @@ steps:
         "gcr.io/my-personal-website-230116/my-first-image",
         "./app",
       ]
-    images: ["gcr.io/my-personal-website-230116/my-first-image"]
