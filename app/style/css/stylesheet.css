@@ -402,6 +402,14 @@ nav img {
     top: 40%;
     width: 100%;
     text-align: center; }
+  .intro-wrapper svg {
+    width: 20px;
+    margin: 4px;
+    display: inline-block;
+    fill: #004842;
+    transition: all 0.5s; }
+    .intro-wrapper svg:hover {
+      fill: #00B84D; }
 
 .developer-tools {
   width: 80%;

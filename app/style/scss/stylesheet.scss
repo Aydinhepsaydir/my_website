@@ -66,6 +66,19 @@ nav {
     width: 100%;
     text-align: center;
   }
+
+  svg {
+    width: 20px;
+    margin: 4px;
+    display: inline-block;
+    fill: $primary-color;
+    transition: all 0.5s;
+
+    &:hover {
+      fill: $secondary-color;
+    }
+  }
+
 }
 
 ///////////////////////
