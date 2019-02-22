@@ -9,11 +9,22 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="fullpage.css" />
+    <script src="jquery-3.3.1.min.js"></script>
+
   </head>
 
   <body>
+    <ul id="myMenu">
+      <li data-menuanchor="firstPage" class="active">
+        <a href="#firstPage">First section</a>
+      </li>
+      <li data-menuanchor="secondPage">
+        <a href="#secondPage">Second section</a>
+      </li>
+    </ul>
+
     <div id="fullpage">
-      <div class="section" id="home-page">
+      <div class="section">
         <!-- INTRO PAGE -->
         <div class="intro-wrapper">
           <div class="intro-text">
@@ -57,7 +68,7 @@
         </svg>
       </div>
 
-      <div class="section" id="tech-stack">
+      <div class="section">
         <!-- TECH STACK PAGE -->
         <div class="developer-tools">
           <h1>Stuff I Use...</h1>
@@ -125,10 +136,21 @@
     </div>
 
     <!-- JS FOR SINGLE PAGE SLIDE TING -->
+    <script type="text/javascript" src="./js/scrolloverflow.min.js"></script>
     <script type="text/javascript" src="./js/fullpage.js"></script>
     <script type="text/javascript">
-      var myFullpage = new fullpage("#fullpage", {
-        sectionsColor: []
+      new fullpage("#fullpage", {
+        //scroll
+        scrollOverflow: true,
+
+        //nav
+        menu: "#myMenu",
+        anchors: ["firstPage", "secondPage"],
+        lockAnchors: false,
+        navigation: true,
+        navigationPosition: "right",
+        navigationToolTips: ["first page", "second page"],
+        showActiveTooltip: true
       });
     </script>
   </body>
