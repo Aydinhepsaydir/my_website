@@ -16,6 +16,6 @@
     "gulp-sass": "^4.0.2"
   },
   "dependencies": {
-    "fullpage.js": "^3.0.4"
+    "fullpage.js": "^4.0.5"
   }
 }
